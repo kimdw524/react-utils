@@ -2,7 +2,7 @@
 
 import { ComponentType, useMemo, useRef } from 'react';
 
-import useIsInViewport from '@/hooks/useIsInViewport';
+import useIsInViewport from '../useIsInViewport';
 
 const withInViewport = <T extends { ref?: React.RefObject<HTMLElement | null> }>(
   WrapperComponent: ComponentType<T>,
