@@ -13,10 +13,9 @@
     "url": "https://github.com/kimdw524/react-overlay.git"
   },
   "files": [
-    "./dist",
+    "dist",
     "README.md"
   ],
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
