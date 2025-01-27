@@ -1,5 +1,7 @@
 import { useCallback, useContext, useMemo } from 'react';
+
 import OverlayContext from './OverlayContext';
+
 import type { OverlayPush } from './types';
 
 const useOverlay = () => {

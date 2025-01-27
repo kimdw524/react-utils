@@ -1,8 +1,10 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import Overlay from './Overlay';
 import OverlayContext from './OverlayContext';
+
 import type { OverlayProps, OverlayProviderProps, OverlayPush } from './types';
 
 const OverlayProvider = ({
