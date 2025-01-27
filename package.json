@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --verbose",
+    "npm-publish": "pnpm build && pnpm pkg delete devDependencies && pnpm publish --no-git-checks --access=public",
     "prepare": "husky install"
   },
   "repository": {
