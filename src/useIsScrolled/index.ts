@@ -11,11 +11,9 @@ const useIsScrolled = () => {
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('load', handleScroll);
     };
   }, []);
 
