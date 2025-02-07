@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "declaration": true,
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "module": "ESNext"
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.spec.*"]
