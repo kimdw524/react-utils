@@ -8,7 +8,7 @@ const useOverlay = () => {
   const overlayContext = useContext(OverlayContext);
 
   if (!overlayContext) {
-    throw new Error('OverlayContext is not defined.');
+    throw new Error('useOverlay must be used within an OverlayContext.');
   }
 
   const pop = useCallback(() => {
