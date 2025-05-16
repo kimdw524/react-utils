@@ -1,7 +1,7 @@
+import useIsInViewport from './useIsInViewport';
+import useIsScrolled from './useIsScrolled';
 import OverlayProvider from './useOverlay/OverlayProvider';
 import useOverlay from './useOverlay/useOverlay';
-import useIsScrolled from './useIsScrolled';
-import useIsInViewport from './useIsInViewport';
 import withInViewport from './withInViewport';
 
-export { OverlayProvider, useOverlay, useIsScrolled, useIsInViewport, withInViewport };
+export { OverlayProvider, useIsInViewport, useIsScrolled, useOverlay, withInViewport };
