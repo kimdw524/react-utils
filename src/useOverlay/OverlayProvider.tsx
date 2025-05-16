@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import Overlay from './Overlay';
 import OverlayContext from './OverlayContext';
-
+import OverlayIdContext from './OverlayIdContext';
 import type { OverlayProps, OverlayProviderProps, OverlayPush } from './types';
 
 const OverlayProvider = ({
@@ -18,13 +18,13 @@ const OverlayProvider = ({
   const countRef = useRef<number>(0);
 
   const removeOverlay = useCallback((id: number) => {
-    setOverlays(overlays => overlays.filter(overlay => overlay.id !== id));
+    setOverlays((overlays) => overlays.filter((overlay) => overlay.id !== id));
   }, []);
 
   const close = useCallback(
     (id: number) => {
-      setOverlays(overlays =>
-        overlays.map(overlay => {
+      setOverlays((overlays) =>
+        overlays.map((overlay) => {
           if (overlay.id === id) {
             return {
               ...overlay,
@@ -41,7 +41,7 @@ const OverlayProvider = ({
 
   const pop = useCallback(
     (isBack: boolean = false) => {
-      const last = overlays.findLast(overlay => overlay.isActive && (!isBack || overlay.closeOnBack));
+      const last = overlays.findLast((overlay) => overlay.isActive && (!isBack || overlay.closeOnBack));
 
       if (!last) {
         return false;
@@ -58,7 +58,7 @@ const OverlayProvider = ({
     (children, option) => {
       const id = ++countRef.current;
 
-      setOverlays(overlays => [
+      setOverlays((overlays) => [
         ...overlays,
         {
           isActive: true,
@@ -71,7 +71,7 @@ const OverlayProvider = ({
         },
       ]);
 
-      if (option.closeOnBack) {
+      if (option?.closeOnBack) {
         window.history.pushState({}, '', '');
       }
     },
@@ -98,10 +98,10 @@ const OverlayProvider = ({
   return (
     <OverlayContext.Provider value={contextValue}>
       {children}
-      {overlays.map(overlay => (
-        <Overlay key={overlay.id} {...overlay}>
-          {overlay.children}
-        </Overlay>
+      {overlays.map((overlay) => (
+        <OverlayIdContext.Provider key={overlay.id} value={overlay.id}>
+          <Overlay {...overlay}>{overlay.children}</Overlay>
+        </OverlayIdContext.Provider>
       ))}
     </OverlayContext.Provider>
   );

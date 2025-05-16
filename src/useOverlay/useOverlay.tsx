@@ -1,11 +1,12 @@
 import { useCallback, useContext, useMemo } from 'react';
 
 import OverlayContext from './OverlayContext';
-
+import OverlayIdContext from './OverlayIdContext';
 import type { OverlayPush } from './types';
 
 const useOverlay = () => {
   const overlayContext = useContext(OverlayContext);
+  const overlayIdContext = useContext(OverlayIdContext);
 
   if (!overlayContext) {
     throw new Error('useOverlay must be used within an OverlayContext.');
@@ -29,12 +30,17 @@ const useOverlay = () => {
     [overlayContext],
   );
 
+  const close = useCallback(() => {
+    overlayContext.close(overlayIdContext);
+  }, [overlayIdContext]);
+
   return useMemo(
     () => ({
       push,
       pop,
+      close,
     }),
-    [pop, push],
+    [pop, push, close],
   );
 };
 
