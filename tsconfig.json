@@ -2,11 +2,15 @@
   "compilerOptions": {
     "moduleResolution": "bundler",
     "declaration": true,
+    "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
     "rootDir": "./src",
     "outDir": "./dist",
-    "module": "ESNext"
+    "module": "ESNext",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.spec.*"]
