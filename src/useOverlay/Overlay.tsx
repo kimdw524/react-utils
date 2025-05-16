@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 
-import OverlayContext from './OverlayContext';
-import type { OverlayProps } from './types';
+import OverlayContext from '@/useOverlay/OverlayContext';
+import type { OverlayProps } from '@/useOverlay/types';
 
 const Overlay = ({
   children,

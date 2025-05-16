@@ -1,8 +1,8 @@
 import { useCallback, useContext, useMemo } from 'react';
 
-import OverlayContext from './OverlayContext';
-import OverlayIdContext from './OverlayIdContext';
-import type { OverlayPush } from './types';
+import OverlayContext from '@/useOverlay/OverlayContext';
+import OverlayIdContext from '@/useOverlay/OverlayIdContext';
+import type { OverlayPush } from '@/useOverlay/types';
 
 const useOverlay = () => {
   const overlayContext = useContext(OverlayContext);

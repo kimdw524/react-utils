@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import Overlay from './Overlay';
-import OverlayContext from './OverlayContext';
-import OverlayIdContext from './OverlayIdContext';
-import type { OverlayProps, OverlayProviderProps, OverlayPush } from './types';
+import Overlay from '@/useOverlay/Overlay';
+import OverlayContext from '@/useOverlay/OverlayContext';
+import OverlayIdContext from '@/useOverlay/OverlayIdContext';
+import type { OverlayProps, OverlayProviderProps, OverlayPush } from '@/useOverlay/types';
 
 const OverlayProvider = ({
   children,

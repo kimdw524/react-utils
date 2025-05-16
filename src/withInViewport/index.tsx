@@ -1,8 +1,8 @@
 'use client';
 
-import { ComponentType, useMemo, useRef } from 'react';
+import { useMemo, useRef, type ComponentType } from 'react';
 
-import useIsInViewport from '../useIsInViewport';
+import useIsInViewport from '@/useIsInViewport';
 
 const withInViewport = <T extends { ref?: React.RefObject<HTMLElement | null> }>(
   WrapperComponent: ComponentType<T>,

@@ -4,8 +4,9 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { OverlayProvider, useOverlay } from '..';
 import OverlayIdContext from './OverlayIdContext';
+import OverlayProvider from './OverlayProvider';
+import useOverlay from './useOverlay';
 
 describe('useOverlay', () => {
   const OverlayComponent = () => {

@@ -9,7 +9,7 @@ const useIsInViewport = <T extends HTMLElement | null>(targetRef: React.RefObjec
     }
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         setIsInViewport(entry.isIntersecting);
       });
     };
